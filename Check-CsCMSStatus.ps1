@@ -1,13 +1,44 @@
-﻿<#
-.DESCRIPTION
-	This script checks the current CMS status on Primary and Backup pools.
+﻿
+<#PSScriptInfo
 
-.NOTES
-  Version      	   		: 0.6
-  Author    			: David Paulino 
-  Info                  : TBD
+.VERSION 1.0
+
+.GUID 4646dc13-1ef9-4a07-8d7d-a7737c942f95
+
+.AUTHOR David Paulino
+
+.COMPANYNAME UC Lobby
+
+.COPYRIGHT
+
+.TAGS Lync LyncServer SkypeForBusiness SfBServer SQL
+
+.LICENSEURI
+
+.PROJECTURI
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+  Version 1.0: 2019/06/12 - Initial release.
+  Version 1.1: 2023/10/07 - Updated to publish in PowerShell Gallery.
+
+.PRIVATEDATA
 
 #>
+
+<# 
+
+.DESCRIPTION 
+ Returns the current Central Management Store (CMS) status when we have two paired pools (Primary and Backup). 
+
+#> 
 Push-Location
 $ManServer = Get-CsManagementConnection
 if ($ManServer.SqlInstance -eq $null){
